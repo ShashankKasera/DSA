@@ -20,10 +20,10 @@ public class Main
 	}
 	public static int maxArray (int array[],int index) {
 
-	        if(index==array.length-1){
+	        if(index==array.length-1)
         	    return array[index];
-	        }
-            int max=Math.max(array[index], maxArray(array,index+1));
+	        
+                int max=Math.max(array[index], maxArray(array,index+1));
         	return max;
     	}
 }
