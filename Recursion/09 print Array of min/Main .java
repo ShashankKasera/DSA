@@ -23,7 +23,7 @@ public class Main
 	        if(index==array.length-1){
         	    return array[index];
 	        }
-            int min=Math.min(array[index], minArray(array,index+1));
+            	int min=Math.min(array[index], minArray(array,index+1));
         	return min;
     	}
 }
