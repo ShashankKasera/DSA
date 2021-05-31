@@ -1,11 +1,11 @@
 import java.util.Scanner;
-public class SelectionSort
+public class Main
 {
 	public static void main(String[] args) {
 	    
 		System.out.print("Enter Array size ");
 		Scanner scn = new Scanner(System.in);  
-                int size=scn.nextInt();
+        	int size=scn.nextInt();
 		int []nums=new int [size];
 		
 		for(int i=0;i<size;i++){
@@ -18,27 +18,31 @@ public class SelectionSort
 		}
 		
 		System.out.println();
-		nums=selectionSort(nums,size);
+		nums=bubbleSort(nums,size);
+		
 		System.out.println("sorted");
 		for(int a:nums){
 		  System.out.print(a+" ");   
 		}
 	}
 	
-	public static int[] selectionSort(int nums[],int n){
+	public static int[] bubbleSort(int nums[],int n){
 	    
-	    for(int i=0;i<n-1;i++){
+	    for(int i=0;i<n;i++){
 	        
-	        int min=i;
-	        for(int j=i+1;j<n;j++){
-	            if(nums[min]>nums[j])
-	               min=j;
+	        boolean sorted=false;
+	        
+	        for(int j=0;j<n-1-i;j++){
+	            
+	            if(nums[j+1]<nums[j]){
+	                int temp=nums[j];
+	                nums[j]=nums[j+1];
+	                nums[j+1]=temp;
+	                sorted=true;
+	            }
 	        }
-	        if(min!=i){
-	            int temp=nums[min];
-	            nums[min]=nums[i];
-	            nums[i]=temp;
-	        }
+	        if(!sorted)
+	          break;
 	    }
 	    return nums;
 	    
